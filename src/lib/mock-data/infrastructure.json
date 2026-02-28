@@ -1,0 +1,62 @@
+[
+  {
+    "id": "metric-001",
+    "service": "api-gateway",
+    "cpu": 67.5,
+    "memory": 82.3,
+    "requests": 8543,
+    "errors": 23,
+    "latency": 145.7,
+    "cost": 678.90,
+    "timestamp": "2026-02-28T11:00:00Z",
+    "anomaly": false
+  },
+  {
+    "id": "metric-002",
+    "service": "auth-service",
+    "cpu": 45.2,
+    "memory": 91.8,
+    "requests": 5234,
+    "errors": 12,
+    "latency": 89.3,
+    "cost": 445.50,
+    "timestamp": "2026-02-28T11:00:00Z",
+    "anomaly": true
+  },
+  {
+    "id": "metric-003",
+    "service": "payment-service",
+    "cpu": 72.8,
+    "memory": 68.4,
+    "requests": 3421,
+    "errors": 5,
+    "latency": 234.1,
+    "cost": 892.30,
+    "timestamp": "2026-02-28T11:00:00Z",
+    "anomaly": false
+  },
+  {
+    "id": "metric-004",
+    "service": "notification-service",
+    "cpu": 38.9,
+    "memory": 54.2,
+    "requests": 12456,
+    "errors": 45,
+    "latency": 67.8,
+    "cost": 323.40,
+    "timestamp": "2026-02-28T11:00:00Z",
+    "anomaly": false
+  },
+  {
+    "id": "metric-005",
+    "service": "analytics-service",
+    "cpu": 88.4,
+    "memory": 76.9,
+    "requests": 6789,
+    "errors": 8,
+    "latency": 456.2,
+    "cost": 712.80,
+    "timestamp": "2026-02-28T11:00:00Z",
+    "anomaly": false
+  }
+]
