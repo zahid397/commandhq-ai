@@ -1,0 +1,30 @@
+[
+  {
+    "id": "incident-001",
+    "title": "Database Connection Pool Exhausted",
+    "description": "Primary PostgreSQL database experiencing connection pool exhaustion, causing API timeouts",
+    "severity": "critical",
+    "status": "investigating",
+    "affectedServices": ["api-gateway", "auth-service", "payment-service"],
+    "detectedAt": "2026-02-28T10:30:00Z"
+  },
+  {
+    "id": "incident-002",
+    "title": "High Memory Usage in API Pods",
+    "description": "API service pods showing 95% memory utilization with frequent OOM kills",
+    "severity": "high",
+    "status": "open",
+    "affectedServices": ["api-gateway"],
+    "detectedAt": "2026-02-28T09:15:00Z"
+  },
+  {
+    "id": "incident-003",
+    "title": "Slow Query Performance",
+    "description": "Database queries taking 5x longer than baseline",
+    "severity": "medium",
+    "status": "resolved",
+    "affectedServices": ["analytics-service"],
+    "detectedAt": "2026-02-27T14:20:00Z",
+    "resolvedAt": "2026-02-27T15:45:00Z"
+  }
+]
