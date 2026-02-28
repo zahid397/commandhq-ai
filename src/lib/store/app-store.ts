@@ -1,9 +1,15 @@
 import { create } from 'zustand';
-import { AppState, DashboardStats } from '@/lib/types';
-import mockIncidents from '@/lib/mock-data/incidents.json';
-import mockDeployments from '@/lib/mock-data/deployments.json';
-import mockInfraMetrics from '@/lib/mock-data/infrastructure.json';
-import mockRunbooks from '@/lib/mock-data/runbooks.json';
+import { AppState, DashboardStats, Incident, Deployment, InfraMetrics, Runbook } from '@/lib/types';
+import mockIncidentsRaw from '@/lib/mock-data/incidents.json';
+import mockDeploymentsRaw from '@/lib/mock-data/deployments.json';
+import mockInfraMetricsRaw from '@/lib/mock-data/infrastructure.json';
+import mockRunbooksRaw from '@/lib/mock-data/runbooks.json';
+
+// Type assertions to ensure JSON matches TypeScript types
+const mockIncidents = mockIncidentsRaw as Incident[];
+const mockDeployments = mockDeploymentsRaw as Deployment[];
+const mockInfraMetrics = mockInfraMetricsRaw as InfraMetrics[];
+const mockRunbooks = mockRunbooksRaw as Runbook[];
 
 const calculateStats = (state: Partial<AppState>): DashboardStats => {
   return {
