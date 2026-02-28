@@ -1,0 +1,90 @@
+[
+  {
+    "id": "deploy-001",
+    "service": "api-gateway",
+    "version": "v2.4.1",
+    "environment": "production",
+    "status": "success",
+    "startedAt": "2026-02-28T08:00:00Z",
+    "completedAt": "2026-02-28T08:15:00Z",
+    "triggeredBy": "github-actions",
+    "commits": 12,
+    "timeline": [
+      {
+        "id": "stage-1",
+        "stage": "Pre-deployment Checks",
+        "status": "completed",
+        "startedAt": "2026-02-28T08:00:00Z",
+        "completedAt": "2026-02-28T08:02:00Z",
+        "duration": 120,
+        "message": "All health checks passed"
+      },
+      {
+        "id": "stage-2",
+        "stage": "Build & Package",
+        "status": "completed",
+        "startedAt": "2026-02-28T08:02:00Z",
+        "completedAt": "2026-02-28T08:07:00Z",
+        "duration": 300,
+        "message": "Docker image built successfully"
+      },
+      {
+        "id": "stage-3",
+        "stage": "Canary Deployment",
+        "status": "completed",
+        "startedAt": "2026-02-28T08:07:00Z",
+        "completedAt": "2026-02-28T08:10:00Z",
+        "duration": 180,
+        "message": "Canary deployed to 10% traffic"
+      },
+      {
+        "id": "stage-4",
+        "stage": "Validation",
+        "status": "completed",
+        "startedAt": "2026-02-28T08:10:00Z",
+        "completedAt": "2026-02-28T08:12:00Z",
+        "duration": 120,
+        "message": "No errors detected in canary"
+      },
+      {
+        "id": "stage-5",
+        "stage": "Full Rollout",
+        "status": "completed",
+        "startedAt": "2026-02-28T08:12:00Z",
+        "completedAt": "2026-02-28T08:15:00Z",
+        "duration": 180,
+        "message": "Deployed to 100% traffic"
+      }
+    ],
+    "canRollback": true
+  },
+  {
+    "id": "deploy-002",
+    "service": "auth-service",
+    "version": "v1.8.0",
+    "environment": "production",
+    "status": "running",
+    "startedAt": "2026-02-28T10:45:00Z",
+    "triggeredBy": "manual",
+    "commits": 5,
+    "timeline": [
+      {
+        "id": "stage-1",
+        "stage": "Pre-deployment Checks",
+        "status": "completed",
+        "startedAt": "2026-02-28T10:45:00Z",
+        "completedAt": "2026-02-28T10:47:00Z",
+        "duration": 120,
+        "message": "All health checks passed"
+      },
+      {
+        "id": "stage-2",
+        "stage": "Build & Package",
+        "status": "running",
+        "startedAt": "2026-02-28T10:47:00Z",
+        "message": "Building Docker image..."
+      }
+    ],
+    "canRollback": false
+  }
+]
