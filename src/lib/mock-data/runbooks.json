@@ -1,0 +1,47 @@
+[
+  {
+    "id": "runbook-001",
+    "title": "Database Connection Pool Recovery",
+    "category": "incident",
+    "content": "# Database Connection Pool Recovery\n\n## Steps\n1. Identify long-running queries\n2. Kill blocked connections\n3. Scale database replicas\n4. Monitor recovery",
+    "steps": [
+      {
+        "order": 1,
+        "title": "Identify Long-Running Queries",
+        "description": "Find queries running longer than 5 minutes",
+        "command": "SELECT * FROM pg_stat_activity WHERE state = 'active' AND query_start < NOW() - INTERVAL '5 minutes';"
+      },
+      {
+        "order": 2,
+        "title": "Terminate Blocked Connections",
+        "description": "Kill connections that are blocking others",
+        "command": "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE wait_event_type = 'Lock';",
+        "warning": "⚠️ This will terminate active connections"
+      }
+    ],
+    "createdAt": "2026-02-27T16:30:00Z",
+    "generatedBy": "runbook_generator"
+  },
+  {
+    "id": "runbook-002",
+    "title": "API Service Scaling Guide",
+    "category": "deployment",
+    "content": "# API Service Scaling Guide\n\n## Horizontal Scaling\n1. Check current pod count\n2. Scale to desired replicas\n3. Monitor performance",
+    "steps": [
+      {
+        "order": 1,
+        "title": "Check Current Pod Count",
+        "description": "View running pods for API service",
+        "command": "kubectl get pods -n production -l app=api-service"
+      },
+      {
+        "order": 2,
+        "title": "Scale Deployment",
+        "description": "Increase replica count",
+        "command": "kubectl scale deployment api-service --replicas=8 -n production"
+      }
+    ],
+    "createdAt": "2026-02-26T10:00:00Z",
+    "generatedBy": "runbook_generator"
+  }
+]
